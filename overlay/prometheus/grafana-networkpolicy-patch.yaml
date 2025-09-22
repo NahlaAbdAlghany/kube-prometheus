@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  ingress:
+  # Add rule for external access (no 'from' selector = allow all)
+  - ports:
+    - protocol: TCP
+      port: 3000
+  # Existing internal cluster rule (Prometheus access)
+  - ports:
+    - protocol: TCP
+      port: 3000
+    from:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: prometheus
