@@ -12,13 +12,13 @@ spec:
         - name: grafana-dashboard-providers
           mountPath: /etc/grafana/provisioning/dashboards
           readOnly: true
-        - name: grafana-dashboards
+        - name: grafana-custom-dashboards
           mountPath: /var/lib/grafana/dashboards
           readOnly: true
       volumes:
       - name: grafana-dashboard-providers
         configMap:
           name: grafana-dashboard-providers
-      - name: grafana-dashboards
+      - name: grafana-custom-dashboards
         configMap:
-          name: grafana-dashboards
+          name: grafana-custom-dashboards

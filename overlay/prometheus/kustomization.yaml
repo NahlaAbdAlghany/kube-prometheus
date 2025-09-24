@@ -7,13 +7,13 @@ patchesStrategicMerge:
 - prometheus-storage-patch.yaml
 - prometheus-networkpolicy-patch.yaml
 - grafana-networkpolicy-patch.yaml
-- dashboard-configmap.yaml
 - grafana-deployment-patch.yaml
 
 resources:
   - ../../manifests/
   - ../../manifests/setup
   - dashboard-configmap-provider.yaml
+  - dashboard-configmap.yaml
 
 
 
