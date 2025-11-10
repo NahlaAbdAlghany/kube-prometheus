@@ -18,4 +18,4 @@ data:
       updateIntervalSeconds: 10
       allowUiUpdates: true
       options:
-        path: /var/lib/grafana/dashboards
+        path: /grafana-dashboard-definitions/0/pvc-usage-enhanced

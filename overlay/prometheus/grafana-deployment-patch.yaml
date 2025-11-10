@@ -9,16 +9,12 @@ spec:
       containers:
       - name: grafana
         volumeMounts:
-        - name: grafana-dashboard-providers
-          mountPath: /etc/grafana/provisioning/dashboards
-          readOnly: true
-        - name: grafana-custom-dashboards
-          mountPath: /var/lib/grafana/dashboards
-          readOnly: true
+        - mountPath: /grafana-dashboard-definitions/0/pvc-usage-enhanced
+          name: grafana-dashboard-pvc
+          subPath: pvc-usage-enhanced.json
+          readOnly: false
+        
       volumes:
-      - name: grafana-dashboard-providers
+      - name: grafana-dashboard-pvc
         configMap:
-          name: grafana-dashboard-providers
-      - name: grafana-custom-dashboards
-        configMap:
-          name: grafana-custom-dashboards
+          name: grafana-dashboard-pvc-usage-enhanced

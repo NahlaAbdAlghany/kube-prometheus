@@ -1,0 +1,51 @@
+- op: replace
+  path: /rules
+  value:
+  # Access to nodes and node metrics
+  - apiGroups: [""]
+    resources:
+    - nodes
+    - nodes/metrics
+    verbs:
+    - get
+    - list
+    - watch
+  # Access to services and endpoints (CRITICAL for service discovery)
+  - apiGroups: [""]
+    resources:
+    - services
+    - endpoints
+    - pods
+    verbs:
+    - get
+    - list
+    - watch
+  # Access to configmaps
+  - apiGroups: [""]
+    resources:
+    - configmaps
+    verbs:
+    - get
+  # Access to namespaces (needed for namespaceSelector)
+  - apiGroups: [""]
+    resources:
+    - namespaces
+    verbs:
+    - get
+    - list
+    - watch
+  # Access to ingresses
+  - apiGroups:
+    - networking.k8s.io
+    resources:
+    - ingresses
+    verbs:
+    - get
+    - list
+    - watch
+  # Non-resource URLs for metrics endpoints
+  - nonResourceURLs:
+    - /metrics
+    - /metrics/slis
+    verbs:
+    - get

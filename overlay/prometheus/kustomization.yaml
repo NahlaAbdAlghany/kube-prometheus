@@ -9,11 +9,22 @@ patchesStrategicMerge:
 - grafana-networkpolicy-patch.yaml
 - grafana-deployment-patch.yaml
 
+# - datasource-patch.yaml
+
 resources:
   - ../../manifests/
   - ../../manifests/setup
+  - pvc-usage-dashboard.yaml
   - dashboard-configmap-provider.yaml
-  - dashboard-configmap.yaml
+  # - dashboard-configmap-provider.yaml
+  # - dashboard-configmap.yaml
+
+patches:
+  - target:
+      kind: ClusterRole
+      name: prometheus-k8s
+    path: prometheus-clusterrolepatch.yaml
+
 
 
 

@@ -26,7 +26,7 @@ data:
           {
             "datasource": {
               "type": "prometheus",
-              "uid": "P1809F7CD0C75ACF3"
+              "uid": "prometheus"
             },
             "enable": true,
             "expr": "ALERTS{alertstate=\"firing\"}",
@@ -59,7 +59,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "prometheus"
           },
           "description": "Current CPU usage percentage across all cores",
           "fieldConfig": {
@@ -147,7 +147,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "100 - (avg by (instance) (irate(node_cpu_seconds_total{mode=\"idle\",instance=~\"$instance\"}[$interval])) * 100)",
               "legendFormat": "CPU Usage - {{instance}}",
@@ -160,7 +160,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "prometheus"
           },
           "description": "Memory usage statistics",
           "fieldConfig": {
@@ -273,7 +273,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "node_memory_MemTotal_bytes{instance=~\"$instance\"} - node_memory_MemAvailable_bytes{instance=~\"$instance\"}",
               "legendFormat": "Used - {{instance}}",
@@ -282,7 +282,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "node_memory_MemAvailable_bytes{instance=~\"$instance\"}",
               "legendFormat": "Available - {{instance}}",
@@ -295,7 +295,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "prometheus"
           },
           "description": "Disk I/O operations per second",
           "fieldConfig": {
@@ -377,7 +377,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "rate(node_disk_reads_completed_total{instance=~\"$instance\"}[$interval])",
               "legendFormat": "Read IOPS - {{device}}",
@@ -386,7 +386,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "rate(node_disk_writes_completed_total{instance=~\"$instance\"}[$interval])",
               "legendFormat": "Write IOPS - {{device}}",
@@ -399,7 +399,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "prometheus"
           },
           "description": "Network traffic in bytes per second",
           "fieldConfig": {
@@ -494,7 +494,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "rate(node_network_transmit_bytes_total{instance=~\"$instance\"}[$interval])",
               "legendFormat": "Transmitted - {{device}}",
@@ -503,7 +503,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "rate(node_network_receive_bytes_total{instance=~\"$instance\"}[$interval])",
               "legendFormat": "Received - {{device}}",
@@ -516,7 +516,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "prometheus"
           },
           "description": "Current system load average",
           "fieldConfig": {
@@ -569,7 +569,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "node_load1{instance=~\"$instance\"}",
               "legendFormat": "Load 1m - {{instance}}",
@@ -582,7 +582,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "prometheus"
           },
           "description": "Available disk space percentage",
           "fieldConfig": {
@@ -637,7 +637,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "(node_filesystem_avail_bytes{mountpoint=\"/\",instance=~\"$instance\"} / node_filesystem_size_bytes{mountpoint=\"/\",instance=~\"$instance\"}) * 100",
               "legendFormat": "Root FS Available - {{instance}}",
@@ -650,7 +650,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "prometheus"
           },
           "description": "System uptime",
           "fieldConfig": {
@@ -703,7 +703,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "node_time_seconds{instance=~\"$instance\"} - node_boot_time_seconds{instance=~\"$instance\"}",
               "legendFormat": "Uptime - {{instance}}",
@@ -716,7 +716,7 @@ data:
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "P1809F7CD0C75ACF3"
+            "uid": "prometheus"
           },
           "description": "Number of running processes",
           "fieldConfig": {
@@ -769,7 +769,7 @@ data:
             {
               "datasource": {
                 "type": "prometheus",
-                "uid": "P1809F7CD0C75ACF3"
+                "uid": "prometheus"
               },
               "expr": "node_procs_running{instance=~\"$instance\"}",
               "legendFormat": "Running Processes - {{instance}}",
@@ -793,7 +793,7 @@ data:
             },
             "datasource": {
               "type": "prometheus",
-              "uid": "P1809F7CD0C75ACF3"
+              "uid": "prometheus"
             },
             "definition": "label_values(up, instance)",
             "hide": 0,
